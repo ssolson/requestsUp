@@ -89,7 +89,6 @@ while south <= northMax-dy:
         west = east
         east = west+dx
 
-        if i ==60: import ipdb; ipdb.set_trace()
         response = getResponse(north,south,east,west)
         df =  pd.DataFrame.from_dict(response)
         properties = properties.append(df)
@@ -107,8 +106,9 @@ while south <= northMax-dy:
 
     print(f'north:{north} \n south{south} \n  east:{east}\n west:{west}')
 
-
 import ipdb; ipdb.set_trace()
+properties = properties.set_index('prop_id')
+properties = dfproperties.groupby(properties.index).first()
 
 numeric_columns = ['prop_id', 'centerlat', 'centerlng']
 for col in numeric_columns:
