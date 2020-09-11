@@ -41,6 +41,6 @@ for id in properties.index[i:]:
     print(f"{i/N}, {i}/{N}")
     i+=1
 
-    with open('deets4.json', 'w', encoding='utf-8') as f:
+    with open('deets.json', 'w', encoding='utf-8') as f:
         json.dump(propDeets, f, ensure_ascii=False, indent=4)
 import ipdb; ipdb.set_trace()
